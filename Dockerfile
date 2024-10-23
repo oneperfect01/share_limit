@@ -17,4 +17,4 @@ EXPOSE 41758
 
 
 # 设置容器启动时执行的命令
-CMD ["python", "./app.py"]
+CMD ["python", "app.py"]
