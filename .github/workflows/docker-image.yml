@@ -19,5 +19,5 @@ jobs:
       
       - name: Build and push Docker image
         run: |
-          docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/shar_list:$(date +%s)
-          docker push ${{ secrets.DOCKER_USERNAME }}/shar_list:$(date +%s)
+          docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/shar_list:$(date +%Y%m%d)
+          docker push ${{ secrets.DOCKER_USERNAME }}/shar_list:$(date +%Y%m%d)
