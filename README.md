@@ -1,13 +1,8 @@
 # 根据车牌对share共享会话进行限速。
 （每个用户单独根据车牌进行限速）
+
 ```
-cd /root
-git clone https://github.com/oneperfect01/share_limit.git
-cd share_limit
-```
-```
-docker build -t limit:latest  .
-docker run -d  --name share_limit -v /root/share_limit/config.json:/app/config.json -p 41758:41758  limit:latest
+docker run -d  --name share_limit -v /root/share_limit/config.json:/app/config.json -p 41758:41758  opaochat/shar_list:latest
 ```
 接口地址：
 ```
