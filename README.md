@@ -1,6 +1,6 @@
 # 根据车牌对share共享会话进行限速。
 （每个用户单独根据车牌进行限速）
-
+使用方式：
 ```
 docker run -d  --name share_limit -v /root/share_limit/config.json:/app/config.json -p 41758:41758  opaochat/shar_list:latest
 ```
