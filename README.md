@@ -1,5 +1,5 @@
 # 根据车牌对share共享会话进行限速。
-
+（每个用户单独根据车牌进行限速）
 ```
 cd /root
 git clone https://github.com/oneperfect01/share_limit.git
@@ -40,8 +40,10 @@ config.json
     }
   }
 ```
-
-
 plus/base   代表你车牌的前四位字符。后面是模型
+
+
 后面可以自行增加。
 也就是说根据车牌的前四位字符进行统一限速。共用一个限速器
+
+如果没有添加的车牌或者模型，默认 20/3h
