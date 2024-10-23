@@ -5,9 +5,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # 将当前目录下的所有文件复制到容器
-COPY . .
-# 将当前目录下的配置文件复制到容器的 /app 目录
-COPY config.json /app
+COPY . /app
 
 # 安装依赖，添加 `--no-cache` 避免缓存
 RUN pip install --no-cache-dir -r requirements.txt
