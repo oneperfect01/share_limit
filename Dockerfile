@@ -13,7 +13,7 @@ COPY config.json /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 暴露应用运行时的端口
-EXPOSE 5005
+EXPOSE 41758
 
 
 # 设置容器启动时执行的命令
