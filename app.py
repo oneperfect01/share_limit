@@ -126,7 +126,7 @@ def index():
 def limit():
     
     data = request.json
-    carid = request.headers.get('Carid', '')[:4]  # 获取请求头中的 carid
+    carid = request.headers.get('Carid', '')  # 获取请求头中的 carid
     token = request.headers.get('Authorization', '')[7:]  # 移除 Bearer 前缀
     model = data.get('model', '')
     gfsessionid = request.cookies.get('gfsessionid', '')
@@ -137,7 +137,7 @@ def limit():
     if not token or not model or not gfsessionid or not carid:
         return jsonify({"error": "Missing token or model or gfsessionid or carid"}), 400
     
-    limiter, error = get_visitor(token, carid, model)
+    limiter, error = get_visitor(token, carid[:4], model)
     if error:
         return jsonify({"error": error}), 400
     
