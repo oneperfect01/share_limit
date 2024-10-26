@@ -3,12 +3,20 @@
 
 
 使用方式：
-
+## docker compose
+```
+git clone https://github.com/oneperfect01/share_limit.git
+cd share_limit
+docker compose pull && docker compose  up  -d
+```
+## docker
 ```
 git clone https://github.com/oneperfect01/share_limit.git
 cd share_limit
 docker run -d  --name share_limit -v ./config.json:/app/config.json -p 41758:41758  opaochat/shar_list:latest
 ```
+
+
 接口地址：
 ```
 http://你的ip:41758/limit
