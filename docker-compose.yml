@@ -1,14 +1,5 @@
 version: '3'
 services:
-    shar_list:
-        image: 'opaochat/shar_list:latest'
-        ports:
-            - '41758:41758'
-        volumes:
-            - './config.json:/app/config.json'
-        container_name: share_limit
-
-services:
   shar_list:
     image: opaochat/shar_list:latest
     container_name: share_limit
