@@ -70,7 +70,11 @@ def get_visitor(token,carid, model):
     with lock:
         # 获取carid和model对应的限速配置
         try:
-            model_limit = config_lim[carid][model]
+            if carid in config_lim:
+                carid_limit=config_lim[carid]
+            else:
+                carid_limit=config_lim['base']
+            model_limit = carid_limit[model]
             limit= model_limit.split('/')[0]
             per= model_limit.split('/')[1]
         except Exception as e:
