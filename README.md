@@ -6,7 +6,7 @@
 
 ```
 git clone https://github.com/oneperfect01/share_limit.git
-docker run -d  --name share_limit -v /root/share_limit/config.json:/app/config.json -p 41758:41758  opaochat/shar_list:latest
+docker run -d  --name share_limit -v ./config.json:/app/config.json -p 41758:41758  opaochat/shar_list:latest
 ```
 接口地址：
 ```
