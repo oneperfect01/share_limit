@@ -2,14 +2,37 @@
 （每个用户单独根据车牌进行限速）
 
 
-使用方式：
-## docker compose
+## 使用方式：
+一、 与share一起部署
+```
+cd  你的share docker-compose的路径
+wget https://raw.githubusercontent.com/oneperfect01/share_limit/main/config.json
+```
+修改docker-compose文件
+
+1、把原来的auditlimit镜像地址修改了，在映射一个文件路径
+```
+  auditlimit:
+    image: opaochat/shar_list:latest
+    restart: always
+    volumes:
+      - ./config.json:/app/config.json
+    labels:
+      - "com.centurylinklabs.watchtower.scope=xyhelper-chatgpt-share-server"
+```
+2、把chatgpt-share-server环境变量的限速url修改一下
+```
+AUDIT_LIMIT_URL: "http://auditlimit:41758/limit"
+```
+
+二、单独部署
+### docker compose
 ```
 git clone https://github.com/oneperfect01/share_limit.git
 cd share_limit
 docker compose pull && docker compose  up  -d
 ```
-## docker
+###  docker
 ```
 git clone https://github.com/oneperfect01/share_limit.git
 cd share_limit
@@ -24,7 +47,7 @@ http://你的ip:41758/limit
 参见
 https://github.com/cockroachai/auditlimit
 
-配置：
+## 配置：
 config.json
 ```
 {
